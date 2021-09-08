@@ -74,9 +74,9 @@
 
 // Каким будет результат выражений?
 
-// console.log(5 > 4);
+// console.log(5 > 4); true
 
-// console.log(10 >= '7');
+// console.log(10 >= '7'); true
 
 // console.log('2' > '12');
 
