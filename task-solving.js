@@ -289,3 +289,191 @@
 //         console.log(i);
 //     }
 // }
+// ========================================================================= //
+// Напиши скрипт, який імітує авторизацію адміністратора в панелі управління.
+
+// Є змінна `message` в яку буде записано повідомлення про результат. При
+// завантаженні сторінки у відвідувача запитується пароль через `prompt`:
+
+// - Якщо натиснули `Cancel`, записати в `message` рядок
+//   `'Скасовано користувачем!'`
+// - В іншому випадку, якщо введений пароль який збігається зі значенням константи
+//   `ADMIN_PASSWORD`, записати в `message` рядок `'Ласкаво просимо!'`
+// - В іншому випадку, тобто якщо жодна з попередніх умов не виконалася, записати в
+//   `message` рядок `'Доступ заборонений, невірний пароль!'`
+// - Після всіх перевірок вивести в `alert` значення змінної `message`.
+
+// const ADMIN_PASSWORD = '1234';
+// const password = prompt('Введите пароль');
+// let message = "";
+// function sendMessage( password ) {
+    
+//     if (password === ADMIN_PASSWORD) {
+//         message = 'Ласкаво просимо!';
+//     }
+//     else if (password === null) {
+//         message = 'Скасовано користувачем!';
+//     }
+//     else {
+//          message = 'Доступ заборонений, невірний пароль!';
+//     }
+//    return alert(message);
+//     }
+// sendMessage();
+// ========================================================================= //
+// Напиши функцию getProductPrice(productName) которая принимает один параметр productName -
+//     название продукта.Функция ищет объект продукта с таким именем(свойство name) в массиве products и
+// возвращает его цену
+//     (свойство price).Если продукт с таким названием не найден, функция должна возвращать null.
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
+
+// function getProductPrice(productName) {
+//   // Change code below this line
+//     for (let product of products) {
+//         if (productName === product.name) {
+//             return product.price
+            
+//     }
+// }
+// return null
+
+//   // Change code above this line
+// }
+// console.log(getProductPrice("Radar"));
+// ========================================================================= //
+// Напиши функцию getAllPropValues(propName) которая принимает один параметр propName - имя(ключ) свойства.
+// Функция должна вернуть массив всех значений свойства с таким именем из каждого объекта в массиве products.
+// Если в объектах нет свойства с таким именем, функция должна вернуть пустой массив.
+
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
+
+// function getAllPropValues(propName) {
+//   // Change code below this line
+//   const propNames = [];
+
+//   for (const product of products) {
+//     if (product[propName]) {
+//       propNames.push(product[propName]);
+//     }
+//   }
+//   return propNames;
+//   // Change code above this line
+// }
+// console.log(getAllPropValues("price"))
+// ========================================================================= //
+// Напиши функцию calculateTotalPrice(productName) которая принимает один параметр productName - название товара.
+// Функция должна вернуть общую стоимость(цена * количество) товара с таким именем из массива products.
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
+
+// function calculateTotalPrice(productName) {
+//   // Пиши код ниже этой строки
+//     for (const product of products) {
+//         if (product.name === productName) {
+//             return (product.price * product.quantity);
+//         }
+//     }
+//     return 0;
+// }
+
+// console.log(calculateTotalPrice("tyrtyrty"))
+//   // Пиши код выше этой строки
+
+  // ========================================================================= //
+// Напиши функцию makeTask(data) которая принимает один параметр data - объект со следующими свойствами.
+// text - текст задачи.
+// category - категория задачи.
+// priority - приоритет задачи.
+// Функция должна составить и вернуть новый объект задачи,
+//     не изменяя напрямую параметр data.
+// В новом объекте должно быть свойство completed, значение которого хранится в одноимённой локальной переменной.
+
+// В параметре data гарантированно будет только свойство text, а остальные два,
+//     category и priority, могут отсутствовать.Тогда, в новом объекте задачи,
+//         в свойствах category и priority должны быть значения по умолчанию, 
+// хранящиеся в одноимённых локальных переменных.
+
+// function makeTask(data) {
+//   const completed = false;
+//   const category = "General";
+//   const priority = "Normal";
+//   // Change code below this line
+//     return { priority, category, completed, ...data, }
+//   // Change code above this line
+// }
+// console.log(makeTask({}));
+
+// function add(...args) {
+//   let totalValue = 0;
+//   for (let arg of args) {
+//   totalValue += arg; }
+//   return totalValue;
+//   // Change code above this line
+// }
+// console.log(add(5, 7, 9));
+// getPotions() - метод для получения всех зелий. Возвращает значение свойства potions
+
+// ========================================================================= //
+// const atTheOldToad = {
+//   potions: [
+//     { name: "Speed potion", price: 460 },
+//     { name: "Dragon breath", price: 780 },
+//     { name: "Stone skin", price: 520 },
+//   ],
+//   // Change code below this line
+    
+//     getPotions() {
+        
+//         return this.potions;  
+//     },
+    
+//     addPotion(newPotion) {
+//       for (let potion of this.potions)
+//          if (potion.name === newPotion.name) {
+//     return `Error! Potion ${newPotion.name} is already in your inventory!`;
+//     }
+//     this.potions.push(newPotion);
+//   },
+    
+//     removePotion(potionName) {
+//         const { potions } = this;
+//         for (let i = 0; i < potions.length; i += 1) {
+
+//             const { name } = potions[i]
+//             if (name === potionName) {
+//               return potions.splice(i, 1)  
+//             }
+//         }
+//         return `Potion ${potionName} is not in inventory!`;
+//     },
+//     updatePotionName(oldName, newName) {
+//         for (let i = 0; i < this.potions.length; i += 1) {
+//             if (this.potions[i].name === oldName) {
+//                 return this.potions[i].name = newName;
+//             }
+            
+//         }
+//         return `Potion ${oldName} is not in inventory!`;
+//   },
+//   // Change code above this line
+// };
+// console.log(atTheOldToad.getPotions())
+// console.log(atTheOldToad.addPotion({ name: "Dragon", price: 780 }));
+// console.log(atTheOldToad.removePotion("Dragon breath"))
+// console.log(atTheOldToad.updatePotionName("Dragon", "New Dragon"))
+
+
