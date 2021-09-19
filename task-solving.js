@@ -809,3 +809,389 @@
 // // Removing Gas mask from inventory
 // console.log(inventory.items); // ['Knife', 'Medkit']
 // ========================================================================= //
+// Колбек функції
+// const pizzaPalace = {
+//   pizzas: ['Ultracheese', 'Smoked', 'Four meats'],
+//   order(pizzaName, onSuccess, onError) {
+//     for (let pizza of pizzaPalace.pizzas) {
+//       if (pizza === pizzaName) {
+//         return onSuccess(pizzaName);
+//       } 
+       
+      
+//     };
+//      return onError(`There is no pizza with a name ${pizzaName} in the assortment.`);
+//   }
+// }
+// // Change code above this line
+
+// // Callback for onSuccess
+// function makePizza(pizzaName) {
+//   return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+// }
+
+// // Callback for onError
+// function onOrderError(error) {
+//   return `Error! ${error}`;
+// }
+
+// // Method calls with callbacks
+// console.log(pizzaPalace.order('Smoked', makePizza, onOrderError));
+// pizzaPalace.order('Four meats', makePizza, onOrderError);
+// pizzaPalace.order('Big Mike', makePizza, onOrderError);
+// pizzaPalace.order('Vienna', makePizza, onOrderError);
+// ========================================================================= //
+// Task 1
+// Добавить метод getinfo в объект user, который будет возвращать инфу о пользователе в формате
+// Name: Peter. Surname: Parker. Age: 22. Position: spider-man.
+
+// const user = {
+//     name: 'Peter',
+//     surname: 'Parker',
+//     age: 22,
+//   position: 'spider-man',
+//   getinfo() {
+//     return `Name: ${this.name}. Surname: ${this.surname}. Age: ${this.age}. Position: ${this.position}.`
+//    } 
+// }
+// console.log(user.getinfo())
+// ========================================================================= //
+// Task 2
+// Нужно написать функцию которая принимает 2 параметр key, которая будет перебирать объект
+// если у объекта есть такой ключ - вернет true
+// Есть 2 варианта решения, сначала напишем функцию, потом решим простым способом
+
+const obj = {
+    name: 'Igor',
+    car:  'Mercedes',
+    carColor: 'black'
+}
+// const fn = function (key, obj) {
+//   for (let item in obj) {
+//     if (item === key) {
+//       return true;
+//    }
+//   }
+//   return false;
+// }
+
+// function fn(key, obj) {
+//   return key in obj;
+// }
+
+// function fn(key, obj) {
+//   return obj.hasOwnProperty(key);
+// }
+// ========================================================================= //
+// Task 3
+// Нужно перебрать объекты и вывести имя лучшего сотрудника
+
+/*
+ * Вызовы функции для проверки работоспособности твоей реализации.
+ */
+
+// function findBestEmployee(obj) {
+//   let biggestInd = 0;
+//   const array = Object.values(obj);
+//   for (let ind of array) {
+//     if (ind > biggestInd) {
+//       biggestInd = ind;
+//     }
+//   }
+//   return biggestInd;
+// }
+ 
+// function findBestEmployee(obj) {
+//   let biggestInd = 0;
+//   let name = '';
+  
+//   for (let ind in obj) {
+//     if (obj[ind] > biggestInd) {
+//       biggestInd = obj[ind];
+//       name = ind;
+//     }
+//   }
+//   return name;
+//  }
+// console.log(
+//   findBestEmployee({
+//     ann: 29,
+//     david: 35,
+//     helen: 1,
+//     lorence: 99,
+//   })
+// ); // lorence
+// console.log(
+//     findBestEmployee({
+//         poly: 12,
+//         mango: 17,
+//         ajax: 4,
+//     }),
+// ); // mango
+// console.log(
+//     findBestEmployee({
+//         lux: 147,
+//         david: 21,
+//         kiwi: 19,
+//         chelsy: 38,
+//     }),
+// ); // lux
+
+// ========================================================================= //
+// Напиши функцию countTotalSalary(employees) принимающую объект зарплат. 
+// Функция считает общую сумму запрплаты работников и возращает ее.
+// Каждое поле объекта, передаваемого в функцию, имеет вид "имя": "зарплата".
+
+// const countTotalSalary = function (employees) {
+//   const array = Object.values(employees);
+//   let totalSalary = 0;
+//   for (let salary of array) {
+//     totalSalary += salary;
+//   }
+//   return totalSalary;
+//   // твой код
+// };
+
+
+// const countTotalSalary = (employees) => Object.values(employees).reduce((acc, el) => acc + el, 0);
+
+// /*
+//  * Вызовы функции для проверки работоспособности твоей реализации.
+//  */
+// console.log(countTotalSalary({})); // 0
+
+// console.log(
+//   countTotalSalary({
+//     mango: 100,
+//     poly: 150,
+//     alfred: 80,
+//   }),
+// ); // 330
+
+// console.log(
+//   countTotalSalary({
+//     kiwi: 200,
+//     lux: 50,
+//     chelsy: 150,
+//   }),
+// ); // 400
+// ========================================================================= //
+
+// Напиши функцию getAllPropValues(arr, prop), которая получает массив объектов и имя свойства.
+// Возвращает массив значений определенного свойства prop из каждого объекта в массиве.
+
+// const products = [
+//   { name: 'Радар', price: 1300, quantity: 4 },
+//   { name: 'Сканер', price: 2700, quantity: 3 },
+//   { name: 'Дроид', price: 400, quantity: 7 },
+//   { name: 'Захват', price: 1200, quantity: 2 },
+// ];
+
+// const getAllPropValues = function (arr, prop) {
+//   let values = [];
+//   for (let obj of arr) {
+//     if (obj.hasOwnProperty(prop)) {
+//         values.push(obj[prop]);
+//     }
+//   }
+//   return values;
+//   // твой код
+// };
+
+
+// const getAllPropValues = (arr, prop) => arr.reduce((acc, el) => (el.hasOwnProperty(prop) ? [...acc, el[prop]] : acc),[]);
+
+// /*
+//  * Вызовы функции для проверки работоспособности твоей реализации.
+//  */
+// console.log(getAllPropValues(products, 'name')); // ['Радар', 'Сканер', 'Дроид', 'Захват']
+
+// console.log(getAllPropValues(products, 'quantity')); // [4, 3, 7, 2]
+
+// console.log(getAllPropValues(products, 'category')); // []
+// ========================================================================= //
+// Напиши функцию calculateTotalPrice(allProdcuts, productName), 
+// которая получает массив объектов и имя продукта(значение свойства name).
+// Возвращает общую стоимость продукта(цена * количество).
+
+// Вызовы функции для проверки работоспособности твоей реализации.
+
+// const products = [
+//   { name: 'Радар', price: 1300, quantity: 4 },
+//   { name: 'Сканер', price: 2700, quantity: 3 },
+//   { name: 'Дроид', price: 400, quantity: 7 },
+//   { name: 'Захват', price: 1200, quantity: 2 },
+// ];
+
+// const calculateTotalPrice = function(allProdcuts, productName) {
+//   // твой код
+// };
+
+// /*
+//  * Вызовы функции для проверки работоспособности твоей реализации.
+//  */
+// console.log(calculateTotalPrice(products, 'Радар')); // 5200
+
+// console.log(calculateTotalPrice(products, 'Дроид')); // 2800
+// ========================================================================= //
+// / Дано: массив, содержащий хеши имен
+// Возврат: строка, отформатированная как список имен, разделенных запятыми,
+// за исключением последних двух имен, которые должны быть разделены амперсандом.
+
+// function list(array) {
+//   const newArray = [];
+//   for (let { name } of array) {
+//     newArray.push(name);
+
+//   }
+//   let firstString = newArray.splice(0, newArray.length - 2).join(", ")
+//   let secondString = newArray.splice(-2).join(' & ');
+//   return firstString ? `${firstString}, ${secondString}`: secondString;
+//     // пиши тут свой код
+// }
+// function list(arr) {
+//   return arr
+//     .map((el) => el.name)
+//     .join(", ")
+//     .replace(/,(?=[^,]*$)/, " &");
+// }
+// function list(arr) {
+//   return arr.reduce(
+//     (acc, { name }, ind, arr) =>
+//       ind > 0 && ind !== arr.length - 1
+//         ? acc + ", " + name
+//         : ind > 0 && ind === arr.length - 1
+//         ? acc + " & " + name
+//         : acc + name,
+//     ""
+//   );
+// }
+// ТЕСТЫ
+
+// console.log(
+//   list([
+//     { name: "Bart" },
+//     { name: "Lisa" },
+//     { name: "Maggie" },
+//     { name: "Petya" },
+//   ])
+// ); // returns 'Bart, Lisa, Maggie & Petya'
+// console.log(list([{ name: "Bart" }, { name: "Lisa" }])); // returns 'Bart & Lisa'
+// console.log(list([{ name: "Bart" }])); // returns 'Bart'
+// console.log(list([])); // '
+// ========================================================================= //
+/*Напиши скрипт управления личным кабинетом интернет банка. 
+Есть объект account в котором необходимо реализовать методы для работы с балансом и историей транзакций.
+/*
+ * Типов транзацкий всего два.
+ * Можно положить либо снять деньги со счета.
+ */
+// const Transaction = {
+//   DEPOSIT: 'deposit',
+//   WITHDRAW: 'withdraw',
+// };
+
+/*
+ * Каждая транзакция это объект со свойствами: id, type и amount
+ */
+
+// const account = {
+//   // Текущий баланс счета
+//   balance: 0,
+
+//   // История транзакций
+//   transactions: [],
+// id: 0,
+  /*
+   * Метод создает и возвращает объект транзакции.
+   * Принимает сумму и тип транзакции.
+   */
+  // createTransaction(amount, type) {
+  //   this.id += 1;
+  //   return { amount, type, id: this.id };
+  // },
+
+  /*
+   * Метод отвечающий за добавление суммы к балансу.
+   * Принимает сумму танзакции.
+   * Вызывает createTransaction для создания объекта транзакции
+   * после чего добавляет его в историю транзакций
+   */
+  // deposit(amount) {
+  //   this.balance += amount;
+  //   const transaction = this.createTransaction(amount, Transaction.DEPOSIT);
+  //   this.transactions.push(transaction);
+  // },
+
+  //  * Метод отвечающий за снятие суммы с баланса.
+  //  * Принимает сумму танзакции.
+  //  * Вызывает createTransaction для создания объекта транзакции
+  //  * после чего добавляет его в историю транзакций.
+  //  *
+  //  * Если amount больше чем текущий баланс, выводи сообщение
+  //  * о том, что снятие такой суммы не возможно, недостаточно средств.
+  //  */
+  // withdraw(amount) {
+  //   if (this.balance >= amount ) {
+  //   this.balance -= amount;
+  //   const transaction = this.createTransaction(amount, Transaction.WITHDRAW);
+  //   this.transactions.push(transaction);
+  // };
+  // return "снятие такой суммы не возможно, недостаточно средств";
+  // },
+  //  * Метод возвращает текущий баланс
+  
+  // getBalance() {},
+
+  /*
+   * Метод ищет и возвращает объект транзации по id
+   */
+  // getTransactionDetails(id) {},
+
+  /*
+   * Метод возвращает количество средств
+   * определенного типа транзакции из всей истории транзакций
+   */
+//   getTransactionTotal(type) {},
+// };
+
+
+// ========================================================================= //
+// TASK 1
+
+// Вам будет дан массив целых чисел. Ваша задача - взять этот массив и найти индекс N,
+// где сумма целых чисел слева от N равна сумме целых чисел справа от N.
+// Если нет индекса, который мог бы сделать это, верните - 1.
+
+// Например:
+
+// Допустим, вам дан массив {1,2,3,4,3,2,1}:
+// Ваша функция вернет индекс 3, потому что в 3-й позиции массива сумма левой части
+// индекса ({1,2,3}) и сумма правой части индекса ({3,2, 1}) оба равны 6.
+
+// Посмотрим еще на один.
+// Вам дан массив {1,100,50, -51,1,1}:
+// Ваша функция вернет индекс 1, потому что в 1-й позиции массива сумма левой части
+// индекса ({1}) и сумма правой части индекса ({50, -51,1,1 }) оба равны 1.
+
+// Последний:
+// Вам дан массив {20,10, -80,10,10,15,35}
+// В индексе 0 левая сторона {}
+// Правая сторона: {10, -80,10,10,15,35}
+// При добавлении они оба равны 0. (Пустые массивы в этой задаче равны 0)
+// function findEvenIndex(arr) {
+// пиши код тут
+// }
+
+// ТЕСТЫ
+
+// console.log(findEvenIndex([1, 2, 3, 4, 3, 2, 1])); // 3
+// console.log(findEvenIndex([1, 100, 50, -51, 1, 1])); // 1
+// console.log(findEvenIndex([1, 2, 3, 4, 5, 6])); // -1
+// console.log(findEvenIndex([20, 10, 30, 10, 10, 15, 35])); // 3
+// console.log(findEvenIndex([20, 10, -80, 10, 10, 15, 35])); // 0
+
+const arr = [1, 2, 3, 4, 5, 6];
+
+const res = arr.push(10);
+console.log(res);
