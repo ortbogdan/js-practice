@@ -1191,7 +1191,130 @@ const obj = {
 // console.log(findEvenIndex([20, 10, 30, 10, 10, 15, 35])); // 3
 // console.log(findEvenIndex([20, 10, -80, 10, 10, 15, 35])); // 0
 
-const arr = [1, 2, 3, 4, 5, 6];
+// const arr = [1, 2, 3, 4, 5, 6];
 
-const res = arr.push(10);
-console.log(res);
+// const res = arr.push(10);
+// console.log(res); // повертаэ довжину масиву
+// ========================================================================= //
+// Task 5
+// function calculateTotalPrice(orderedItems) {
+//   let totalPrice = 0;
+//   // Change code below this line
+//   orderedItems.forEach(function callback(number) {
+//     totalPrice += number;
+//   })
+  
+
+
+//   for (let i = 0; i < orderedItems.length; i += 1) {
+//     totalPrice += orderedItems[i];
+//   }
+
+//   // Change code above this line
+//   return totalPrice;
+// }
+// console.log(calculateTotalPrice([12, 85, 37, 4]))
+// ========================================================================= //
+// Task 6
+// Функция filterArray(numbers, value) принимает массив чисел numbers и возвращает новый массив,
+// в котором будут только те элементы оригинального массива, которые больше чем значение параметра value.
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала метод forEach.
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+//   // Change code below this line
+
+// numbers.forEach(function callback(number) {
+//   if (number > value) {
+//     filteredNumbers.push(number);
+//     }
+//   })
+
+//   // Change code above this line
+//   return filteredNumbers;
+// }
+// console.log(filterArray([1, 2, 3, 4, 5], 3));
+// ========================================================================= //
+// Task 7
+// Функция getCommonElements(firstArray, secondArray) принимает два массива произвольной длины
+// в параметры firstArray и secondArray, и возвращает новый массив их общих элементов,
+// то есть тех которые есть в обоих массивах.
+// Выполни рефакторинг функции так, чтобы вместо цикла for она использовала метод forEach.
+// function getCommonElements(firstArray, secondArray) {
+//   const commonElements = [];
+//   // Change code below this line
+
+//   firstArray.forEach(function callback(number) {
+//     if (secondArray.includes(number)) {
+//       commonElements.push(number);
+//   }
+// })
+
+
+//   // for (let i = 0; i < firstArray.length; i += 1) {
+//   //   if (secondArray.includes(firstArray[i])) {
+//   //     commonElements.push(firstArray[i]);
+//   //   }
+//   // }
+
+//   return commonElements;
+//   // Change code above this line
+// }
+// console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19]))
+
+// Change code below this line
+// const filterArray =(numbers, value)=>{
+//   const filteredNumbers = [];
+
+//   numbers.forEach((number) => {
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   });
+
+//   // Change code above this line
+//   return filteredNumbers;
+// }
+// ========================================================================= // Метод Reduce
+// const total = [2, 7, 3, 14, 6].reduce((previousValue, number) => {
+//   return previousValue + number;
+// }, 0);
+
+// console.log(total); // 32
+
+// # Спочатку метод reduce() створює внутрішню змінну-акумулятор і
+// # присвоює їй значення параметра initialValue або першого елемента
+// # масиву, що перебирається, якщо initialValue не задане.
+// previousValue = 0
+
+// # Потім колбек-функція викликається для кожного елемента масиву. Поточне значення
+// # параметра previousValue - це те, що повернула колбек-функція на минулій ітерації.
+// Ітерація 1 -> previousValue = 0 -> number = 2 -> return 0 + 2 -> return 2
+// Ітерація 2 -> previousValue = 2 -> number = 7 -> return 2 + 7 -> return 9
+// Ітерація 3 -> previousValue = 9 -> number = 3 -> return 9 + 3 -> return 12
+// Ітерація 4 -> previousValue = 12 -> number = 14 -> return 12 + 14 -> return 26
+// Ітерація 5 -> previousValue = 26 -> number = 6 -> return 26 + 6 -> return 32
+
+// # Після завершення перебирання всього масиву, метод reduce() повертає значення акумулятора.
+// Результат - 32
+
+const players = [
+  { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+  { name: "Poly", playtime: 469, gamesPlayed: 2 },
+  { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+  { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+];
+// Change code below this line
+
+const totalAveragePlaytimePerGame = players.reduce((severalTime, player) => {
+  severalTime += player.playtime / gamesPlayed;
+  return severalTime
+ }, 0)
+
+
+
+
+const calculateTotalBalance = users => {
+  const balanceValue = users.map(user=>user.balance);
+  return balanceValue.reduce((total, value )=> total=+value,0)
+};
+console.log(calculateTotalBalance(users))
