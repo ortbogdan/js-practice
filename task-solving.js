@@ -1197,23 +1197,23 @@ const obj = {
 // console.log(res); // повертаэ довжину масиву
 // ========================================================================= //
 // Task 5
-function calculateTotalPrice(orderedItems) {
-  let totalPrice = 0;
-  // Change code below this line
-  orderedItems.forEach(function callback(number) {
-    totalPrice += number;
-  })
+// function calculateTotalPrice(orderedItems) {
+//   let totalPrice = 0;
+//   // Change code below this line
+//   orderedItems.forEach(function callback(number) {
+//     totalPrice += number;
+//   })
   
 
 
-  for (let i = 0; i < orderedItems.length; i += 1) {
-    totalPrice += orderedItems[i];
-  }
+//   for (let i = 0; i < orderedItems.length; i += 1) {
+//     totalPrice += orderedItems[i];
+//   }
 
-  // Change code above this line
-  return totalPrice;
-}
-console.log(calculateTotalPrice([12, 85, 37, 4]))
+//   // Change code above this line
+//   return totalPrice;
+// }
+// console.log(calculateTotalPrice([12, 85, 37, 4]))
 // ========================================================================= //
 // Task 6
 // Функция filterArray(numbers, value) принимает массив чисел numbers и возвращает новый массив,
