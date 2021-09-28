@@ -1590,8 +1590,40 @@ const users = [
 // Дополни функцию getTotalBalanceByGender(users, gender) так,
 // чтобы она возвращала общий баланс пользователей(свойство balance),
 // пол которых(свойство gender) совпадает со значением параметра gender.
-const getTotalBalanceByGender = (users, gender) => {
-   return [...users].filter( user => user.gender === gender ).reduce((totalBalance, user) => totalBalance+user.balance, 0)
-};
-console.log(getTotalBalanceByGender(users, "male"))
-console.log(getTotalBalanceByGender (users, "female"))
+// const getTotalBalanceByGender = (users, gender) => {
+//    return [...users].filter( user => user.gender === gender ).reduce((totalBalance, user) => totalBalance+user.balance, 0)
+// };
+// console.log(getTotalBalanceByGender(users, "male"))
+// console.log(getTotalBalanceByGender (users, "female"))
+// ========================================================================= //Модуль 5
+class StringBuilder {
+constructor (initialValue){
+    this.value = initialValue;
+  }
+  
+getValue() {
+    return this.value;
+  }
+  
+padEnd(str){
+    this.value = this.value + str;
+  }
+  
+padStart(str){
+    this.value = str + this.value;
+  }
+  
+ padBoth(str){
+ this.value=str + this.value + str;} 
+}
+
+
+// Change code above this line
+const builder = new StringBuilder(".");
+console.log(builder.getValue()); // "."
+builder.padStart("^");
+console.log(builder.getValue()); // "^."
+builder.padEnd("^");
+console.log(builder.getValue()); // "^.^"
+builder.padBoth("=");
+console.log(builder.getValue()); // "=^.^="
