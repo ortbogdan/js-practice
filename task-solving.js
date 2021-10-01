@@ -1676,50 +1676,97 @@ const users = [
 // После объявления класса мы добавили инициализацию экземпляра и вызовы методов в той последовательности,
 // в которой твой код будут проверять тесты.Пожалуйста ничего там не меняй.
 
-class User {
-  email;
-  constructor(email) {
-    this.email = email;
-  }
-  get email() {
-    return this.email;
-  }
-  set email(newEmail) {
-    this.email = newEmail;
-  }
-}
-class Admin extends User {
-  // Change code below this line
-  blacklistedEmails = [];
-  blacklist(email) {
-    this.blacklistedEmails.push(email);
-}
-  isBlacklisted(email) {
-    return this.blacklistedEmails.includes(email);
-}
+// class User {
+//   email;
+//   constructor(email) {
+//     this.email = email;
+//   }
+//   get email() {
+//     return this.email;
+//   }
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+// class Admin extends User {
+//   // Change code below this line
+//   blacklistedEmails = [];
+//   blacklist(email) {
+//     this.blacklistedEmails.push(email);
+// }
+//   isBlacklisted(email) {
+//     return this.blacklistedEmails.includes(email);
+// }
 
-  static AccessLevel = {
-    BASIC: "basic",
-    SUPERUSER: "superuser",
-  };
+//   static AccessLevel = {
+//     BASIC: "basic",
+//     SUPERUSER: "superuser",
+//   };
 
-  constructor({ email, accessLevel }) {
-    super(email);
-    this.accessLevel = accessLevel;
-  }
+//   constructor({ email, accessLevel }) {
+//     super(email);
+//     this.accessLevel = accessLevel;
+//   }
 
-  // Change code above this line
-}
+//   // Change code above this line
+// }
 
-const mango = new Admin({
-  email: "mango@mail.com",
-  accessLevel: Admin.AccessLevel.SUPERUSER,
-});
+// const mango = new Admin({
+//   email: "mango@mail.com",
+//   accessLevel: Admin.AccessLevel.SUPERUSER,
+// });
 
-console.log(mango.email); // "mango@mail.com"
-console.log(mango.accessLevel); // "superuser"
+// console.log(mango.email); // "mango@mail.com"
+// console.log(mango.accessLevel); // "superuser"
 
-mango.blacklist("poly@mail.com");
-console.log(mango.blacklistedEmails); // ["poly@mail.com"]
-console.log(mango.isBlacklisted("mango@mail.com")); // false
-console.log(mango.isBlacklisted("poly@mail.com")); // true
+// mango.blacklist("poly@mail.com");
+// console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+// console.log(mango.isBlacklisted("mango@mail.com")); // false
+// console.log(mango.isBlacklisted("poly@mail.com")); // true
+// ========================================================================= //
+// class Animal {
+  // constructor({ name, kind } = {}) {
+  //   this.name = name;
+  //   this.kind = kind;
+  // }
+// }
+  // get name() {
+  //     return this.name;
+  // }
+  
+// const simba = new Animal ("Simba","dog")
+// class Dog extends Animal {
+//   constructor({ name, kind, legs }={}) {
+//     super({ name, kind });
+//     this.legs = legs;
+//   }
+// }
+// const simba = new Animal({
+//   name:'Simba',
+//   kind:'dog'});
+// console.log("Тваринка:", simba.kind);
+// simba.changName('Pumba');
+// console.log(simba)
+
+// class Spic extends Animal {
+//   constructor({ color, ...arg } = {}) {
+//     super({ ...arg });
+//     this.color = color;
+//   }
+// }
+// const poly = new Spic({ name: "Poly", kind: "dog", color: "white" })
+// console.log(poly)
+// ========================================================================= //
+// Задача 1
+// Напишите однострочное решение,
+// которое вычисляет сумму квадратных корней для всех чётных чисел целочисленного массива.
+// console.log([2, 4, 5].filter(number => number % 2 === 0).reduce((total, num) => total += Math.sqrt(num), 0))
+// console.log(
+//  // Входной массив
+//  [1, 4, 3, 0, 4, 5, 4]
+//    // Оставляем только чётные числа
+//    .filter(element => !(element % 2))
+//    // Считаем квадратный корень и записываем в аккумулятор
+//    .reduceRight((accumulator, element) => accumulator + Math.sqrt(element), 0)
+// ); // 6
+// ========================================================================= //
