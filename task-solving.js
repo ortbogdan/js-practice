@@ -1770,3 +1770,262 @@ const users = [
 //    .reduceRight((accumulator, element) => accumulator + Math.sqrt(element), 0)
 // ); // 6
 // ========================================================================= //
+// Напиши функцию-конструктор Account, которая создает объект со свойствами login и email. 
+// В prototype функции - конструктора добавь метод getInfo(), 
+// который выводит в консоль значения полей login и email объекта который его вызвал.
+
+// console.log(Account.prototype.getInfo); // function
+
+// const mango = new Account({
+//   login: 'Mangozedog',
+//   email: 'mango@dog.woof',
+// });
+
+// mango.getInfo(); // Login: Mangozedog, Email: mango@dog.woof
+
+// const poly = new Account({
+//   login: 'Poly',
+//   email: 'poly@mail.com',
+// });
+
+// poly.getInfo(); // Login: Poly, Email: poly@mail.com
+// ========================================================================= //
+// Напиши класс User для создания пользователя со следующим свойствами:
+
+// name - строка
+// age - число
+// followers - число
+// Добавь метод getInfo(), который, выводит строку: User ${имя} is ${возраст} years old and has ${кол-во фоловеров} followers
+// class User {
+//   constructor({ name, age, followers }) {
+//     this.name = name;
+//     this.age = age;
+//     this.followers = followers;
+//   }
+//   getInfo() {
+//     console.log( `User ${this.name} is ${this.age} years old and has ${this.followers} followers`)
+//   }
+// }
+// const mango = new User({
+//   name: 'Mango',
+//   age: 2,
+//   followers: 20,
+// });
+
+// mango.getInfo(); // User Mango is 2 years old and has 20 followers
+
+// const poly = new User({
+//   name: 'Poly',
+//   age: 3,
+//   followers: 17,
+// });
+
+// poly.getInfo(); // User Poly is 3 years old and has 17 followers
+// ========================================================================= //
+// Напиши класс Storage, который будет создавать объекты для управления складом товаров. При вызове будет получать один аргумент - начальный массив товаров, и записывать его в свойство items.
+
+// Добавь методы класса:
+
+// getItems() - возвращает массив текущих товаров
+// addItem(item) - получает новый товар и добавляет его к текущим
+// removeItem(item) - получет товар и, если он есть, удаляет его из текущих
+
+// class Storage {
+//   constructor 
+// }
+
+
+// const storage = new Storage([
+//   'Нанитоиды',
+//   'Пролонгер',
+//   'Железные жупи',
+//   'Антигравитатор',
+// ]);
+
+// const items = storage.getItems();
+// console.table(items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор" ]
+
+// storage.addItem('Дроид');
+// console.table(storage.items); // [ "Нанитоиды", "Пролонгер", "Железные жупи", "Антигравитатор", "Дроид" ]
+
+// storage.removeItem('Пролонгер');
+// console.table(storage.items); // [ "Нанитоиды", "Железные жупи", "Антигравитатор", "Дроид" ]
+// ========================================================================= //
+// Джейден Смит, сын Уилла Смита, является звездой таких фильмов,
+// как The Karate Kid (2010) и After Earth (2013). Джейден также
+// известен своей философией, которую он распространяет через Twitter.
+// Когда он пишет в Твиттере, он известен тем, что почти всегда использует
+// каждое слово с большой буквы. Для простоты вам придется писать каждое слово
+// с заглавной буквы, посмотрите, как ожидается сокращение в приведенном ниже примере.
+// Ваша задача - преобразовать строки в то, как они были бы написаны Джейденом Смитом.
+// Строки - это настоящие цитаты Джейдена Смита, но они не пишутся с заглавной
+// буквы так, как он их изначально набирал.
+
+// String.prototype.toJadenCase = function () {
+//   // пиши код тут
+// };
+
+// const sentence = "How can mirrors be real if our eyes aren't real";
+
+// console.log(sentence.toJadenCase()); // "How Can Mirrors Be Real If Our Eyes Aren't Real"
+// ========================================================================= //
+// Напиши класс StringBuilder. На вход он получает один параметр - строку, которую записывает в свойство _value.
+
+// Добавь классу следующий функционал:
+
+// Геттер value - возвращает текущее значение поля _value
+// Метод append(str) - получает парметр str (строку) и добавляет ее в конец _value
+// Метод prepend(str) - получает парметр str (строку) и добавляет ее в начало value
+// Метод pad(str) - получает парметр str (строку) и добавляет ее в начало и в конец _value
+// class StringBuilder {
+//   constructor(string) {
+//     this.string = string;
+//   }
+
+// }
+// const builder = new StringBuilder('.');
+
+// builder.append('^');
+// console.log(builder.value); // '.^'
+
+// builder.prepend('^');
+// console.log(builder.value); // '^.^'
+
+// builder.pad('=');
+// console.log(builder.value); // '=^.^='
+// ========================================================================= //
+// Напиши класс Car с 
+/*
+   * Добавь код для того чтобы заглушить автомобиль
+   * Записывает в свойство isOn значение false,
+   * и сбрасывает текущую скорость в 0
+   */
+  // turnOff() {}
+
+  /*
+   * Добавялет к свойству speed полученное значение,
+   * при условии что результирующая скорость
+   * не больше чем значение свойства maxSpeed
+   */
+  // accelerate(value) {}
+
+  /*
+   * Отнимает от свойства speed полученное значение,
+   * при условии что результирующая скорость не меньше нуля
+   */
+  // decelerate(value) {}
+
+// From GoIT20 to Everyone:  11:41 AM
+// const mustang = new Car({ maxSpeed: 200, price: 2000 });
+
+// mustang.turnOn();
+// mustang.accelerate(50);
+// mustang.drive(2);
+
+// Car.getSpecs(mustang);
+// // maxSpeed: 200, speed: 50, isOn: true, distance: 100, price: 2000
+// mustang.decelerate(20);
+// mustang.drive(1);
+// mustang.turnOff();
+// Car.getSpecs(mustang);
+// // maxSpeed: 200, speed: 0, isOn: false, distance: 130, price: 2000
+// console.log(mustang.price); // 2000
+// mustang.price = 4000;
+// console.log(mustang.price); // 4000
+// ========================================================================= //
+// Найти различия между цифрами в 2 массивах
+
+// const first = [1, 3, 3, 4, 6, 5, 4];
+// const second = [6, 3, 5, 2, 2];
+
+// const third = [8, 13, 222, 93, 43, 11];
+// const fourth = [8, 222, 12, 93, 77, 83, 12, 43];
+
+// const getUnique = (firstArr, secondArr) => {
+//   // пиши код тут
+// };
+// console.log(getUnique(first, second)); // [1, 2, 4]
+// console.log(getUnique(third, fourth)); // [11, 12, 13, 77, 83]
+// ========================================================================= //
+// const arr = [
+//   12,
+//   24,
+//   36,
+//   [
+//     "Hello",
+//     ["Some string", [777, { name: "Vasya" }, ["Finish"]]],
+//     ["new array"],
+//     [true, false],
+//   ],
+// ];
+
+// function getFlat(arr) {
+//   return arr.reduce((acc, el) => {
+//     return Array.isArray(el) ? [...acc, ...getFlat(el)] : [...acc, el];
+//   }, []);
+// }
+
+// console.log(getFlat(arr));
+// Array.prototype.getFlat = function () {
+//   return this.reduce((acc, el) => {
+//     return Array.isArray(el) ? [...acc, ...el.getFlat()] : [...acc, el];
+//   }, []);
+// };
+
+// console.log(arr.getFlat());
+// ========================================================================= //
+// Некоторые числа обладают забавными свойствами. Например:
+
+// 89 -> 8¹ + 9² = 89 * 1
+
+// 695 -> 6² + 9³ + 5⁴ = 1390 = 695 * 2
+
+// 46288 -> 4³ + 6⁴ + 2⁵ + 8⁶ + 8⁷ = 2360688 = 46288 * 51
+
+// Дано положительное целое число n, записанное как abcd ... (a, b, c, d ... цифры)
+// и положительное целое число p
+
+// мы хотим найти положительное целое число k, если оно существует,
+// например, сумма цифр n, взятых в последовательные степени p, равна k * n.
+// Другими словами:
+// Существует ли целое число k, например: (a ^ p + b ^ (p + 1) + c ^ (p + 2) + d ^ (p + 3) + ...) = n * k
+// Если это так, мы вернем k, если не вернем -1.
+// Примечание: n и p всегда будут указываться как строго положительные целые числа.
+
+// function digPow(n, p) {
+//   // пиши код тут
+// }
+
+// console.log(digPow(89, 1)); // 1
+// console.log(digPow(92, 1)); // -1
+// console.log(digPow(46288, 3)); // 51
+
+// ========================================================================= //
+// TASK 1
+// Вам будет дан массив целых чисел. Ваша задача - взять этот массив и найти индекс N,
+// где сумма целых чисел слева от N равна сумме целых чисел справа от N.
+// Если нет индекса, который мог бы сделать это, верните - 1.
+const arr = [1, 1, 1, 3, 1, 1, 1];
+function findEvenIndex(arr) {
+  return arr.findIndex((element, elementIndex) =>
+    arr.slice(0, elementIndex).reduce((leftSum, leftElement) => leftSum + leftElement, 0) ===
+    arr.slice(elementIndex + 1).reduce((rightSum, rightElement) => rightSum + rightElement, 0));
+}
+console.log(findEvenIndex(arr))
+//   for (let elem of arr) {
+//     console.log(arr.slice(0, arr.indexOf(elem)).reduce((leftSum, leftElement) => leftSum + leftElement, 0));
+//     console.log(arr.slice(arr.indexOf(elem) + 1).reduce((rightSum, rightElement) => rightSum + rightElement, 0));
+
+//     if(arr.slice(0, arr.indexOf(elem)).reduce((leftSum, leftElement) => leftSum + leftElement, 0) ===
+//       arr.slice(arr.indexOf(elem) + 1).reduce((rightSum, rightElement) => rightSum + rightElement, 0)) {
+//       // console.log("res", arr.indexOf(elem) + 1)
+//       return arr.indexOf(elem);
+//     };
+
+//   };
+
+//   return -1;
+// }
+
+
+
