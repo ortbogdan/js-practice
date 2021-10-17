@@ -2027,5 +2027,54 @@ const obj = {
 //   return -1;
 // }
 // ========================================================================= //
+// const images = [
+//   {
+//     url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260',
+//     alt: 'White and Black Long Fur Cat',
+//   },
+//   {
+//     url: 'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?dpr=2&h=750&w=1260',
+//     alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
+//   },
+//   {
+//     url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260',
+//     alt: 'Group of Horses Running',
+//   },
+// ];
 
+// const listEl = document.querySelector(".gallery");
+// const strings = images.reduce((acc, {url, alt}) => acc+`<li><img src='${url}' alt='${alt}'></li>`, "") 
+// // const strings = images.map(({ url, alt }) => `<li><img src='${url}' alt='${alt}'></li>`).join('');
+// listEl.insertAdjacentHTML('beforeend', strings);
+// ========================================================================= //
 
+// const formRef = document.querySelector('.login-form');
+// const emailRef = document.querySelector('input[name="email"]');
+// const passwordRef = document.querySelector('input[name="password"]');
+
+// const onSubmitForm = (event) => {
+//   event.preventDefault();
+//   if (!emailRef.value && !passwordRef.value) {
+//     return alert('Error');
+//   }
+//   const dataForm = {
+//     email: emailRef.value,
+//     password: passwordRef.value,
+//   }
+//   console.log(dataForm);
+//   event.currentTarget.reset();
+// }
+// formRef.addEventListener("submit", onSubmitForm);
+// ========================================================================= //
+const randomIntegerFromInterval = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
+const spanRef = document.querySelector(".color");
+const buttonRef = document.querySelector(".change-color");
+
+function onClickChangeColor(event) {
+  const randomColor = `rgb( ${randomIntegerFromInterval(0, 255)},${randomIntegerFromInterval(0, 255)},${randomIntegerFromInterval(0, 255)} )`;
+  spanRef.textContent = randomColor;
+  document.body.style.backgroundColor = randomColor;
+}
+buttonRef.addEventListener('click', onClickChangeColor);
