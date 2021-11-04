@@ -2076,5 +2076,6 @@ function onClickChangeColor(event) {
   const randomColor = `rgb( ${randomIntegerFromInterval(0, 255)},${randomIntegerFromInterval(0, 255)},${randomIntegerFromInterval(0, 255)} )`;
   spanRef.textContent = randomColor;
   document.body.style.backgroundColor = randomColor;
+  console.dir(event.target.nodeName)
 }
 buttonRef.addEventListener('click', onClickChangeColor);
