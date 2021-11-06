@@ -2066,16 +2066,57 @@ const obj = {
 // }
 // formRef.addEventListener("submit", onSubmitForm);
 // ========================================================================= //
-const randomIntegerFromInterval = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-};
-const spanRef = document.querySelector(".color");
-const buttonRef = document.querySelector(".change-color");
+// const randomIntegerFromInterval = (min, max) => {
+//   return Math.floor(Math.random() * (max - min + 1) + min);
+// };
+// const spanRef = document.querySelector(".color");
+// const buttonRef = document.querySelector(".change-color");
 
-function onClickChangeColor(event) {
-  const randomColor = `rgb( ${randomIntegerFromInterval(0, 255)},${randomIntegerFromInterval(0, 255)},${randomIntegerFromInterval(0, 255)} )`;
-  spanRef.textContent = randomColor;
-  document.body.style.backgroundColor = randomColor;
-  console.dir(event.target.nodeName)
-}
-buttonRef.addEventListener('click', onClickChangeColor);
+// function onClickChangeColor(event) {
+//   const randomColor = `rgb( ${randomIntegerFromInterval(0, 255)},${randomIntegerFromInterval(0, 255)},${randomIntegerFromInterval(0, 255)} )`;
+//   spanRef.textContent = randomColor;
+//   document.body.style.backgroundColor = randomColor;
+//   console.dir(event.target.nodeName)
+// }
+// buttonRef.addEventListener('click', onClickChangeColor);
+// =============================Promise==========================================//
+
+const isSuccess = false;
+
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    if (isSuccess) {
+      resolve("Success! Value passed to resolve function");
+    } else {
+      reject("Error! Error passed to reject function");
+    }
+  }, 2000);
+});
+ console.dir(promise)
+ console.log(promise)
+ console.log(typeof promise)
+
+ promise.then((resolve)=>{console.log(resolve)}).catch((reject)=>{console.log(reject)}).finally(()=>{console.log("I dont know what is it!")})
+
+
+ const fetchUserFromServer = username => {
+  return new Promise((resolve, reject) => {
+    console.log(`Fetching data for ${username}`);
+
+    setTimeout(() => {
+      // Change value of isSuccess variable to simulate request status
+      const isSuccess = true;
+
+      if (isSuccess) {
+        resolve("success value");
+      } else {
+        reject("error");
+      }
+    }, 2000);
+  });
+};
+
+fetchUserFromServer("Mango")
+  .then(user => console.log(user))
+  .catch(error => console.error(error));
+  
