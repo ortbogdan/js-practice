@@ -2119,4 +2119,4 @@ const promise = new Promise((resolve, reject) => {
 fetchUserFromServer("Mango")
   .then(user => console.log(user))
   .catch(error => console.error(error));
-  
+console.dir(fetch("https://jsonplaceholder.typicode.com/users"))
