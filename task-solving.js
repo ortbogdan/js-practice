@@ -2081,44 +2081,113 @@ const obj = {
 // buttonRef.addEventListener('click', onClickChangeColor);
 // =============================Promise==========================================//
 
-const isSuccess = false;
+// const isSuccess = false;
 
-const promise = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    if (isSuccess) {
-      resolve("Success! Value passed to resolve function");
-    } else {
-      reject("Error! Error passed to reject function");
-    }
-  }, 2000);
-});
- console.dir(promise)
- console.log(promise)
- console.log(typeof promise)
+// const promise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     if (isSuccess) {
+//       resolve("Success! Value passed to resolve function");
+//     } else {
+//       reject("Error! Error passed to reject function");
+//     }
+//   }, 2000);
+// });
+//  console.dir(promise)
+//  console.log(promise)
+//  console.log(typeof promise)
 
- promise.then((resolve)=>{console.log(resolve)}).catch((reject)=>{console.log(reject)}).finally(()=>{console.log("I dont know what is it!")})
+//  promise.then((resolve)=>{console.log(resolve)}).catch((reject)=>{console.log(reject)}).finally(()=>{console.log("I dont know what is it!")})
 
 
- const fetchUserFromServer = username => {
-  return new Promise((resolve, reject) => {
-    console.log(`Fetching data for ${username}`);
+//  const fetchUserFromServer = username => {
+//   return new Promise((resolve, reject) => {
+//     console.log(`Fetching data for ${username}`);
 
-    setTimeout(() => {
-      // Change value of isSuccess variable to simulate request status
-      const isSuccess = true;
+//     setTimeout(() => {
+//       // Change value of isSuccess variable to simulate request status
+//       const isSuccess = true;
 
-      if (isSuccess) {
-        resolve("success value");
-      } else {
-        reject("error");
-      }
-    }, 2000);
-  });
-};
+//       if (isSuccess) {
+//         resolve("success value");
+//       } else {
+//         reject("error");
+//       }
+//     }, 2000);
+//   });
+// };
 
-fetchUserFromServer("Mango")
-  .then(user => console.log(user))
-  .catch(error => console.error(error));
-console.dir(fetch("https://jsonplaceholder.typicode.com/users"))
+// fetchUserFromServer("Mango")
+//   .then(user => console.log(user))
+//   .catch(error => console.error(error));
+// console.dir(fetch("https://jsonplaceholder.typicode.com/users"))
 
-console.log()
+// console.log()
+// =======================================================================//
+// const arr = [30, 5, 2, 6, 24, 60];
+
+// function minNum(arr) {
+//   const minNumber = Math.min(...arr);
+//   return minNumber;
+// }
+// console.log(minNum(arr))
+
+// console.log(typeof []) // object
+// console.log(typeof {}) // object
+// console.log(typeof '2') // string
+// console.log(typeof 2) // number
+// console.log(typeof NaN) // number
+// console.log(typeof null) // object
+
+// console.log({} + []) //  object  Object
+// console.log('1' + [1, 3]) // 11, 3
+// console.log([3, 4, 6] + [4, 1]) //3,4,64,1
+// console.log('3g' ** '3') // NaN
+// console.log(NaN == null) //false
+// console.log(null == false) //false
+// console.log('0' == false) // true
+// console.log('' == false)//true
+// console.log([4, 5] ** 3) // NaN
+// ==================================String=====================================//
+// const str = "Hello world!"
+// console.log(...str); // H e l l o   w o r l d !
+// console.log(str.length) // 12
+// console.log(str.toUpperCase()) // HELLO WORLD!
+// console.log(str.toLowerCase()) // hello world!
+// console.log(str[1])// e
+// console.log(str.indexOf('H')) // 0
+// console.log(str.includes('He')) //true
+// console.log(str.endsWith('!')) // true
+// console.log(str.replace('H', 'г')) //гello world!
+// console.log(str.replaceAll('l', 'л')) // Heллo worлd!
+// console.log(str.charCodeAt()) // 72
+// ==================================Numbers=====================================//
+console.log(Number.parseInt('56px')) // 56
+console.log(Number.parseFloat('56.5px')) //56.5
+
+
+isNaN(NaN);       // true
+isNaN(undefined); // true
+isNaN({});        // true
+
+isNaN(true);      // false
+isNaN(null);      // false
+isNaN(37);        // false
+
+// strings
+isNaN("37");      // false: "37" преобразуется в число 37 которое не NaN
+isNaN("37.37");   // false: "37.37" преобразуется в число 37.37 которое не NaN
+isNaN("");        // false: пустая строка преобразуется в 0 которое не NaN
+isNaN(" ");       // false: строка с пробелом преобразуется в 0 которое не NaN
+isNaN("37,5");    // true
+
+// Даты
+isNaN(new Date());                // false
+isNaN(new Date().toString());     // true
+
+// Пример почему использование isNaN не всегда уместно
+isNaN("blabla")   // true: "blabla" преобразовано в число.
+                  // При парсинге преобразуется в число при неудаче возвращает NaN
+console.log(34.5.toFixed(10)) //34.5000000000
+console.log(Math.abs(-34)) // 34
+console.log(Math.floor(-1.34)) // -2
+console.log(Math.floor(1.34)) // 1
