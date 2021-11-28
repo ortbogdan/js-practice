@@ -2161,33 +2161,35 @@ const obj = {
 // console.log(str.replaceAll('l', 'л')) // Heллo worлd!
 // console.log(str.charCodeAt()) // 72
 // ==================================Numbers=====================================//
-console.log(Number.parseInt('56px')) // 56
-console.log(Number.parseFloat('56.5px')) //56.5
+// console.log(Number.parseInt('56px')) // 56
+// console.log(Number.parseFloat('56.5px')) //56.5
 
 
-isNaN(NaN);       // true
-isNaN(undefined); // true
-isNaN({});        // true
+// isNaN(NaN);       // true
+// isNaN(undefined); // true
+// isNaN({});        // true
 
-isNaN(true);      // false
-isNaN(null);      // false
-isNaN(37);        // false
+// isNaN(true);      // false
+// isNaN(null);      // false
+// isNaN(37);        // false
 
-// strings
-isNaN("37");      // false: "37" преобразуется в число 37 которое не NaN
-isNaN("37.37");   // false: "37.37" преобразуется в число 37.37 которое не NaN
-isNaN("");        // false: пустая строка преобразуется в 0 которое не NaN
-isNaN(" ");       // false: строка с пробелом преобразуется в 0 которое не NaN
-isNaN("37,5");    // true
+// // strings
+// isNaN("37");      // false: "37" преобразуется в число 37 которое не NaN
+// isNaN("37.37");   // false: "37.37" преобразуется в число 37.37 которое не NaN
+// isNaN("");        // false: пустая строка преобразуется в 0 которое не NaN
+// isNaN(" ");       // false: строка с пробелом преобразуется в 0 которое не NaN
+// isNaN("37,5");    // true
 
-// Даты
-isNaN(new Date());                // false
-isNaN(new Date().toString());     // true
+// // Даты
+// isNaN(new Date());                // false
+// isNaN(new Date().toString());     // true
 
-// Пример почему использование isNaN не всегда уместно
-isNaN("blabla")   // true: "blabla" преобразовано в число.
-                  // При парсинге преобразуется в число при неудаче возвращает NaN
-console.log(34.5.toFixed(10)) //34.5000000000
-console.log(Math.abs(-34)) // 34
-console.log(Math.floor(-1.34)) // -2
-console.log(Math.floor(1.34)) // 1
+// // Пример почему использование isNaN не всегда уместно
+// isNaN("blabla")   // true: "blabla" преобразовано в число.
+//                   // При парсинге преобразуется в число при неудаче возвращает NaN
+// console.log(34.5.toFixed(10)) //34.5000000000
+// console.log(Math.abs(-34)) // 34
+// console.log(Math.floor(-1.34)) // -2
+// console.log(Math.floor(1.34)) // 1
+
+// =======================================================================/
